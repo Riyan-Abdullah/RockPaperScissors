@@ -1,0 +1,171 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+.profile-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND LIGHT EFFECT */
+.profile-container::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #22d3ee33, transparent);
+  top: -100px;
+  left: -100px;
+  animation: moveLight 8s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+/* PROFILE BOX */
+.profile-box {
+  width: 400px;
+  padding: 45px 35px;
+  border-radius: 25px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  box-shadow: 
+    0 0 40px rgba(34, 211, 238, 0.3),
+    0 0 80px rgba(0, 0, 0, 0.5);
+  animation: fadeInProfile 0.8s ease;
+  z-index: 1;
+  position: relative;
+}
+
+/* TITLE */
+.profile-box h1 {
+  margin-bottom: 30px;
+  color: #22d3ee;
+  font-size: 2.5rem;
+  text-shadow: 
+    0 0 15px #22d3ee,
+    0 0 30px #22d3ee;
+  letter-spacing: 2px;
+}
+
+/* PROFILE INFO SECTION */
+.profile-info {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profile-info:hover {
+  border-color: rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+  transform: translateY(-5px);
+}
+
+.profile-info p {
+  margin: 12px 0;
+  font-size: 18px;
+  color: #e0e7ff;
+  letter-spacing: 0.5px;
+}
+
+.profile-info p strong {
+  color: #22d3ee;
+  text-shadow: 0 0 10px #22d3ee;
+}
+
+/* BUTTONS CONTAINER */
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* BUTTONS STYLING */
+.profile-buttons button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* PRIMARY BUTTON */
+.profile-buttons button:first-child {
+  background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+  color: black;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+}
+
+.profile-buttons button:first-child:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+}
+
+.profile-buttons button:first-child:active {
+  transform: scale(0.98);
+}
+
+/* SECONDARY BUTTON */
+.profile-buttons button:last-child {
+  background: transparent;
+  color: #22d3ee;
+  border: 2px solid #22d3ee;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.profile-buttons button:last-child:hover {
+  background: #22d3ee;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.5);
+}
+
+.profile-buttons button:last-child:active {
+  transform: scale(0.98);
+}
+
+/* ANIMATIONS */
+@keyframes moveLight {
+  from {
+    top: -100px;
+    left: -100px;
+  }
+  to {
+    top: 100px;
+    right: -100px;
+  }
+}
+
+@keyframes fadeInProfile {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

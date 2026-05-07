@@ -1,0 +1,107 @@
+/* Background */
+.game-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Main Card */
+.game-box {
+  width: 360px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  text-align: center;
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
+  animation: fadeIn 0.6s ease;
+}
+
+/* Title */
+.game-box h1 {
+  color: #22d3ee;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #22d3ee;
+}
+
+/* Buttons Container */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Game Buttons */
+.choices button {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #1e293b;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+.choices button:hover {
+  background: #22d3ee;
+  color: black;
+  box-shadow: 0 0 20px #22d3ee;
+  transform: scale(1.05);
+}
+
+/* Result Section */
+.result-box {
+  margin-top: 25px;
+}
+
+.result-box p {
+  color: #cbd5f5;
+  margin: 5px 0;
+}
+
+.result-box h2 {
+  margin-top: 10px;
+  font-size: 22px;
+  color: #22d3ee;
+  text-shadow: 0 0 10px #22d3ee;
+}
+
+/* Score */
+.score {
+  margin-top: 20px;
+  color: white;
+}
+
+/* Back Button */
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #22d3ee;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  box-shadow: 0 0 20px #22d3ee;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

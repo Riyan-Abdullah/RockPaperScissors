@@ -1,0 +1,136 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+.home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+}
+
+/* BACKGROUND LIGHT EFFECT */
+.home::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #22d3ee33, transparent);
+  top: -100px;
+  left: -100px;
+  animation: moveLight 8s infinite alternate ease-in-out;
+}
+
+/* TITLE */
+.home h1 {
+  max-width: 55%;
+  font-size: 70px;
+  line-height: 1.2;
+  color: #22d3ee;
+  text-shadow: 0 0 20px #22d3ee, 0 0 60px #22d3ee;
+  animation: glow 2s infinite alternate;
+}
+
+/* MENU RIGHT SIDE */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+/* BUTTONS */
+.menu button {
+  width: 250px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BUTTON HOVER */
+.menu button:hover {
+  background: #22d3ee;
+  color: black;
+  transform: translateX(-10px) scale(1.05);
+  box-shadow: 0 0 25px #22d3ee;
+}
+
+/* CLICK EFFECT */
+.menu button:active {
+  transform: scale(0.95);
+}
+
+/* SHINE EFFECT */
+.menu button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+
+.menu button:hover::after {
+  left: 100%;
+}
+
+/* TITLE GLOW ANIMATION */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #22d3ee;
+  }
+  to {
+    text-shadow: 0 0 40px #22d3ee, 0 0 80px #22d3ee;
+  }
+}
+
+/* BACKGROUND LIGHT MOVE */
+@keyframes moveLight {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(200px, 150px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .home h1 {
+    font-size: 40px;
+    max-width: 100%;
+  }
+
+  .menu {
+    align-items: center;
+  }
+}
